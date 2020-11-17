@@ -1,6 +1,6 @@
 describe('Outlook sign in and addi n', () => {
   it('can find search results', async () => {
-      browser.url('https://login.live.com/');
+      await browser.url('https://login.live.com/');
       await $('input[name="loginfmt"]').setValue('ca.salas@outlook.com');
       await $('#idSIButton9').click();
       await $('input[name="passwd"]').setValue('ocle32008');
@@ -13,7 +13,7 @@ describe('Outlook sign in and addi n', () => {
       await $('button[name="Get Add-ins"]').click();
       const iframe = $('iframe.fm3HSVWLq7Ufa6UsA9Ia3');
       iframe.waitForExist()
-      browser.switchToFrame(iframe);
+      await browser.switchToFrame(iframe);
       await $('#MyAddins').click();
       await $('#PrivateAddInDropdownButton').click();
       await $('a=Add from URL...').click();
