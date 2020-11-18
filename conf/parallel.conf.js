@@ -15,24 +15,27 @@ exports.config = {
   },
 
   capabilities: [{
-    browser: 'chrome'
-  },{
-    browser: 'firefox'
-  },{
-    browser: 'internet explorer'
-  },{
-    browser: 'safari'
-  }],
+    browser: 'Chrome',
+    name: 'single_test',
+    build: 'webdriver-browserstack',
+    os:'Windows'
+  },
+    {
+      browser: 'Chrome',
+      name: 'single_test',
+      build: 'webdriver-browserstack',
+      os:'OSX'
+    }],
 
   logLevel: 'warn',
   coloredLogs: true,
   screenshotPath: './errorShots/',
   baseUrl: '',
-  waitforTimeout: 10000,
+  waitforTimeout: 20000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
   host: 'hub.browserstack.com',
-  
+
   before: function () {
     var chai = require('chai');
     global.expect = chai.expect;
@@ -40,7 +43,8 @@ exports.config = {
   },
   framework: 'mocha',
   mochaOpts: {
-      ui: 'bdd'
+      ui: 'bdd',
+    timeout: 200000
   }
 }
 

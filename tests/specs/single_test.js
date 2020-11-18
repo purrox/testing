@@ -1,5 +1,5 @@
 describe('Outlook sign in and addi n', () => {
-  it('can find search results', () => {
+    it('can find search results', () => {
       browser.url('https://login.live.com/');
       $('input[name="loginfmt"]').setValue('ca.salas@outlook.com');
       $('#idSIButton9').click();
@@ -17,7 +17,6 @@ describe('Outlook sign in and addi n', () => {
       $('#MyAddins').click();
       $('#PrivateAddInDropdownButton').click();
       $('a=Add from URL...').click();
-
       //browser.getTitle().should.match(/BrowserStack - Google Search/i);
   });
 });
